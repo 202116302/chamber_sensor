@@ -3,10 +3,10 @@
 raspberry pi  
 
       ip 
-chamber_1.py 192.168.0.171  -  sudo python3 sensor.py
-chamber_2.py 192.168.0.172  -  python3 sensor.py
-chamber_3.py 192.168.0.173  -  sudo python3 sensor.py
-chamber_4.py 192.168.0.174  -  sudo python3.9 sensor.py
+chamber_1.py 192.168.0.171  -  sudo python3 sensor_1.py
+chamber_2.py 192.168.0.172  -  python3 sensor_2.py
+chamber_3.py 192.168.0.173  -  sudo python3 sensor_3.py
+chamber_4.py 192.168.0.174  -  sudo python3.9 sensor_4.py
 
 
 camera.py 
