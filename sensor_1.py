@@ -88,8 +88,11 @@ while True:
             print('Read error')
             time.sleep(180)
 
-    except KeyboardInterrupt:
-        print("Terminated by Keyboard")
+    except RuntimeError as error:
+        print(error.args[0])
+        time.sleep(2.0)
+        continue
+
 
     except URLError as e:
         print(e.args[0])

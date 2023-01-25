@@ -103,3 +103,4 @@ while True:
 
     except KeyboardInterrupt:
         print("Terminated by Keyboard")
+        break
