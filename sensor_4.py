@@ -15,7 +15,7 @@ DEVICE     = 0x23 # Default device I2C address
 
 POWER_DOWN = 0x00 # No active state
 
-POWER_ON   = 0x01 # Power on
+POWER_ON   = 0x01 # Power on 
 
 RESET      = 0x07 # Reset data register value
 
@@ -84,11 +84,11 @@ try:
 
         if h is not None and t is not None :
             print("Temperature = {:0.1f}℃ Humidity = {:0.1f}% Light Level = {:0.1f}lx".format(t, h, readLight()))
-            time.sleep(15)
-            html = urllib.request.urlopen("https://api.thingspeak.com/update?api_key=FA8AYAOLQZY9TZD8&field1={:0.1f}&field2={:0.1f}&field3={:0.1f}".format(t,h,readLight()))
+            time.sleep(5)
+            html = urllib.request.urlopen("https://api.thingspeak.com/update?api_key=Y8YE9ZO5XFAMIFNJ&field1={:0.1f}&field2={:0.1f}&field3={:0.1f}".format(t,h,readLight()))
         else :
             print('Read error')
-            time.sleep(15)
+            time.sleep(5)
             
 except KeyboardInterrupt:
     print("Terminated by Keyboard")
