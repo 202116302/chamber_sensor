@@ -97,7 +97,7 @@ while True:
                 "https://api.thingspeak.com/update?api_key=W0PHS3YGBJ8GSKQJ&field1={:0.1f}&field2={:0.1f}&field3={:0.1f}".format(
                     t, h, readLight()))
         else:
-            time.sleep(5)
+            time.sleep(180)
             print('Read error')
 
     except RuntimeError as error:

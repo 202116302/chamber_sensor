@@ -3,6 +3,7 @@ from datetime import datetime
 import Adafruit_DHT
 import urllib.request
 import smbus
+from urllib.error import URLError
 
 # humidity, temperature
 sensor = Adafruit_DHT.DHT22
@@ -69,17 +70,15 @@ def readLight(addr=DEVICE):
     return convertToNumber(data)
 
 
-
-
-
-try:
-
-    while True:
+while True:
+    try:
 
         h, t = Adafruit_DHT.read_retry(sensor, pin)
 
         if h is not None and t is not None:
-            print("Temperature = {:0.1f}℃ Humidity = {:0.1f}% Light Level = {:0.1f}lx Time = {}".format(t, h, readLight(), now.strftime(
+            print(
+                "Temperature = {:0.1f}℃ Humidity = {:0.1f}% Light Level = {:0.1f}lx Time = {}".format(t, h, readLight(),
+                                                                                                      now.strftime(
                                                                                                           '%H:%M:%S %m-%d')))
             time.sleep(180)
             html = urllib.request.urlopen(
@@ -89,8 +88,15 @@ try:
             print('Read error')
             time.sleep(180)
 
-except KeyboardInterrupt:
-    print("Terminated by Keyboard")
+    except KeyboardInterrupt:
+        print("Terminated by Keyboard")
 
-finally:
-    print("End of Program")
+    except URLError as e:
+        print(e.args[0])
+        time.sleep(2.0)
+        continue
+
+
+    except KeyboardInterrupt:
+        print("Terminated by Keyboard")
+        break
