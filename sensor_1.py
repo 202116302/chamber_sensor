@@ -9,6 +9,7 @@ sensor = Adafruit_DHT.DHT22
 
 pin = 4
 
+now = datetime.now()
 # lux
 
 DEVICE = 0x23  # Default device I2C address
@@ -68,7 +69,7 @@ def readLight(addr=DEVICE):
     return convertToNumber(data)
 
 
-now = datetime.now()
+
 
 
 try:
@@ -78,7 +79,8 @@ try:
         h, t = Adafruit_DHT.read_retry(sensor, pin)
 
         if h is not None and t is not None:
-            print("Temperature = {:0.1f}℃ Humidity = {:0.1f}% Light Level = {:0.1f}lx Time = {}".format(t, h, readLight(), now.strftime('%H:%M:%S %m-%d')))
+            print("Temperature = {:0.1f}℃ Humidity = {:0.1f}% Light Level = {:0.1f}lx Time = {}".format(t, h, readLight(), now.strftime(
+                                                                                                          '%H:%M:%S %m-%d')))
             time.sleep(180)
             html = urllib.request.urlopen(
                 "https://api.thingspeak.com/update?api_key=4TROQC78R0WQXLDK&field1={:0.1f}&field2={:0.1f}&field3={:0.1f}".format(

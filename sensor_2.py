@@ -92,7 +92,7 @@ while True:
                 "Temperature = {:0.1f}℃ Humidity = {:0.1f}% Light Level = {:0.1f}lx Time = {}".format(t, h, readLight(),
                                                                                                       now.strftime(
                                                                                                           '%H:%M:%S %m-%d')))
-            time.sleep(5)
+            time.sleep(180)
             html = urllib.request.urlopen(
                 "https://api.thingspeak.com/update?api_key=W0PHS3YGBJ8GSKQJ&field1={:0.1f}&field2={:0.1f}&field3={:0.1f}".format(
                     t, h, readLight()))
