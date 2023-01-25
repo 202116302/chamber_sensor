@@ -14,5 +14,8 @@ camera.py
 
 */30 * * * * python3.7 /home/pi/camera/camera.py 추가 혹은 ( */30 * * * * python3.7 camera.py가 있는 파일 경로)
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-![KakaoTalk_20230125_133400578](https://user-images.githubusercontent.com/100981830/214483790-731b8797-de3e-4b1e-8231-b82cf7ff07f3.png)
+![image](https://user-images.githubusercontent.com/100981830/214483837-b6024e96-0808-470b-8931-6b0f8f109ad2.png)
+
+
