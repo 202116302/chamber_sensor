@@ -1,5 +1,5 @@
 import time
-import datetime
+from datetime import datetime
  #import Adafruit_DHT
 import urllib.request
 import smbus
@@ -18,6 +18,7 @@ import adafruit_dht
 
 dhtDevice = adafruit_dht.DHT22(board.D4)
 
+now = datetime.now()
 
 # lux
 
@@ -96,7 +97,7 @@ while True :
         
 
             if h is not None and t is not None :
-                print("Temperature = {:0.1f}℃ Humidity = {:0.1f}% Light Level = {:0.1f}lx".format(t, h, readLight()))
+                print("Temperature = {:0.1f}℃ Humidity = {:0.1f}% Light Level = {:0.1f}lx Time = {}".format(t, h, readLight(), now.strftime('%H:%M:%S %m-%d')))
                 time.sleep(5)
                 html = urllib.request.urlopen("https://api.thingspeak.com/update?api_key=W0PHS3YGBJ8GSKQJ&field1={:0.1f}&field2={:0.1f}&field3={:0.1f}".format(t,h,readLight()))
             else :
