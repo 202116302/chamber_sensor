@@ -13,4 +13,5 @@ camera.py
 라즈베리 파이 터미널에서 실행 후 crontab -e 
 
 */30 * * * * python3.7 /home/pi/camera/camera.py 추가 혹은 ( */30 * * * * python3.7 camera.py가 있는 파일 경로)
-![Uploading image.png…]()
+
+![image](https://user-images.githubusercontent.com/100981830/214483748-0c4e48d5-cd15-45ac-a802-0caf2528cf86.png)
