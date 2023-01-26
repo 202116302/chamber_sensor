@@ -100,6 +100,11 @@ while True:
         time.sleep(2.0)
         continue
 
+    except OSError as e:
+        print(e.args[0])
+        time.sleep(5)
+        continue
+
 
     except KeyboardInterrupt:
         print("Terminated by Keyboard")
