@@ -10,7 +10,7 @@ sensor = Adafruit_DHT.DHT22
 
 pin = 4
 
-now = datetime.now()
+
 
 # lux
 
@@ -73,6 +73,8 @@ def readLight(addr=DEVICE):
 
 while True:
     try:
+
+        now = datetime.now()
 
         h, t = Adafruit_DHT.read_retry(sensor, pin)
 

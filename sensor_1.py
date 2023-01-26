@@ -10,7 +10,7 @@ sensor = Adafruit_DHT.DHT22
 
 pin = 4
 
-now = datetime.now()
+
 # lux
 
 DEVICE = 0x23  # Default device I2C address
@@ -72,6 +72,7 @@ def readLight(addr=DEVICE):
 
 while True:
     try:
+        now = datetime.now()
 
         h, t = Adafruit_DHT.read_retry(sensor, pin)
 

@@ -19,7 +19,7 @@ from urllib.error import URLError
 
 dhtDevice = adafruit_dht.DHT22(board.D4)
 
-now = datetime.now()
+
 
 # lux
 
@@ -83,7 +83,7 @@ def readLight(addr=DEVICE):
 while True:
     try:
         # h, t = Adafruit_DHT.read_retry(sensor, pin)
-
+        now = datetime.now()
         t = dhtDevice.temperature
         h = dhtDevice.humidity
 
