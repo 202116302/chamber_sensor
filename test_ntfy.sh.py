@@ -72,6 +72,7 @@ def main():
             else:
                 pass
 
+            print("done")
             time.sleep(300)
 
 
