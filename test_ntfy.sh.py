@@ -1,12 +1,10 @@
 import requests
-from datetime import datetime
 import time
 
 def main():
     while True:
         try:
 
-            now = datetime.now()
 
             data1 = requests.get(
                 "https://api.thingspeak.com/channels/1999882/feeds.json?api_key=HN55139L0VGN5XNM&results=1")
