@@ -5,7 +5,6 @@ def main():
     while True:
         try:
 
-
             data1 = requests.get(
                 "https://api.thingspeak.com/channels/1999882/feeds.json?api_key=HN55139L0VGN5XNM&results=1")
             data2 = requests.get(
@@ -32,10 +31,9 @@ def main():
             pi4_temp = pi4['feeds'][0]['field1']
             pi4_humid = pi4['feeds'][0]['field2']
 
-
             if float(pi1_humid) < 50:
                 requests.post("https://ntfy.sh/hyejin1",
-                          data=f"챔버1 목마름 습도:{pi1_humid}%".encode(encoding='utf-8'))
+                              data=f"챔버1 목마름 습도:{pi1_humid}%".encode(encoding='utf-8'))
 
             elif float(pi2_humid) < 50:
                 requests.post("https://ntfy.sh/hyejin1",
@@ -77,8 +75,6 @@ def main():
 
         except:
             time.sleep(120)
-
-
 
 
 if __name__ == '__main__':
