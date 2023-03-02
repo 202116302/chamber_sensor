@@ -8,10 +8,10 @@ import time
 
 
 def main():
-    pi1 = pd.read_csv('data_dir/pi1.csv')
-    pi2 = pd.read_csv('data_dir/pi1.csv')
-    pi3 = pd.read_csv('data_dir/pi1.csv')
-    pi4 = pd.read_csv('data_dir/pi1.csv')
+    pi1 = pd.read_csv('dashboard/data_dir/pi1.csv')
+    pi2 = pd.read_csv('dashboard/data_dir/pi2.csv')
+    pi3 = pd.read_csv('dashboard/data_dir/pi3.csv')
+    pi4 = pd.read_csv('dashboard/data_dir/pi4.csv')
 
     pi1_graph = pi1.loc[4900:, :]
     pi2_graph = pi1.loc[4900:, :]
