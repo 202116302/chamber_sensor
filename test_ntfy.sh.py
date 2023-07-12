@@ -60,7 +60,7 @@ def main():
                 requests.post("https://ntfy.sh/hyejin1",
                               data=f"챔버2 추웡  온도:{pi2_temp}°C".encode(encoding='utf-8'))
 
-            elif float(pi2_temp) > 30:
+            elif float(pi2_temp) > 27:
                 requests.post("https://ntfy.sh/hyejin1",
                               data=f"챔버2 더워~잉  온도:{pi2_temp}°C".encode(encoding='utf-8'))
 
@@ -68,7 +68,7 @@ def main():
                 requests.post("https://ntfy.sh/hyejin1",
                               data=f"챔버3 추웡  온도:{pi3_temp}°C".encode(encoding='utf-8'))
 
-            elif float(pi3_temp) > 30:
+            elif float(pi3_temp) > 27:
                 requests.post("https://ntfy.sh/hyejin1",
                               data=f"챔버3 더워~잉  온도:{pi3_temp}°C".encode(encoding='utf-8'))
 
