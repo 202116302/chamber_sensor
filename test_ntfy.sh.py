@@ -31,32 +31,34 @@ def main():
             pi4_temp = pi4['feeds'][0]['field1']
             pi4_humid = pi4['feeds'][0]['field2']
 
-            # if float(pi1_humid) < 50:
-            #     requests.post("https://ntfy.sh/hyejin1",
-            #                   data=f"챔버1 목마름 습도:{pi1_humid}%".encode(encoding='utf-8'))
+            if float(pi1_humid) < 50:
+                requests.post("https://ntfy.sh/hyejin1",
+                              data=f"챔버1 목마름 습도:{pi1_humid}%".encode(encoding='utf-8'))
 
-            if float(pi2_humid) < 50:
+            elif float(pi2_humid) < 50:
                 requests.post("https://ntfy.sh/hyejin1",
                               data=f"챔버2 목마름 습도:{pi2_humid}%".encode(encoding='utf-8'))
 
-            if float(pi2_humid) < 50:
+            elif float(pi3_humid) < 50:
                 requests.post("https://ntfy.sh/hyejin1",
-                              data=f"챔버2 목마름 습도:{pi2_humid}%".encode(encoding='utf-8'))
+                              data=f"챔버3 목마름 습도:{pi3_humid}%".encode(encoding='utf-8'))
 
-
-
-            # elif float(pi4_humid) < 50:
-            #     requests.post("https://ntfy.sh/hyejin1",
-            #                   data=f"챔버4 목마름 습도:{pi4_humid}%".encode(encoding='utf-8'))
+            elif float(pi4_humid) < 50:
+                requests.post("https://ntfy.sh/hyejin1",
+                              data=f"챔버4 목마름 습도:{pi4_humid}%".encode(encoding='utf-8'))
 
             else:
                 pass
 
-            # if float(pi1_temp) < 20:
-            #     requests.post("https://ntfy.sh/hyejin1",
-            #                   data=f"챔버1 추웡 온도:{pi1_temp}°C".encode(encoding='utf-8'))
+            if float(pi1_temp) < 20:
+                requests.post("https://ntfy.sh/hyejin1",
+                              data=f"챔버1 추웡 온도:{pi1_temp}°C".encode(encoding='utf-8'))
 
-            if float(pi2_temp) < 20:
+            elif float(pi1_temp) > 27:
+                requests.post("https://ntfy.sh/hyejin1",
+                              data=f"챔버1 더워~잉  온도:{pi1_temp}°C".encode(encoding='utf-8'))
+
+            elif float(pi2_temp) < 20:
                 requests.post("https://ntfy.sh/hyejin1",
                               data=f"챔버2 추웡  온도:{pi2_temp}°C".encode(encoding='utf-8'))
 
@@ -72,9 +74,13 @@ def main():
                 requests.post("https://ntfy.sh/hyejin1",
                               data=f"챔버3 더워~잉  온도:{pi3_temp}°C".encode(encoding='utf-8'))
 
-            # elif float(pi4_temp) < 20:
-            #     requests.post("https://ntfy.sh/hyejin1",
-            #                   data=f"챔버4 추웡  온도:{pi4_temp}°C".encode(encoding='utf-8'))
+            elif float(pi4_temp) < 20:
+                requests.post("https://ntfy.sh/hyejin1",
+                              data=f"챔버4 추웡  온도:{pi4_temp}°C".encode(encoding='utf-8'))
+
+            elif float(pi4_temp) > 27:
+                requests.post("https://ntfy.sh/hyejin1",
+                              data=f"챔버4 더워~잉  온도:{pi4_temp}°C".encode(encoding='utf-8'))
 
             else:
                 pass

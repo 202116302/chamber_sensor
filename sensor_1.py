@@ -9,7 +9,7 @@ from urllib.error import URLError
 sensor = Adafruit_DHT.DHT22
 
 pin = 4
-
+s
 
 # lux
 
@@ -21,8 +21,7 @@ POWER_ON = 0x01  # Power on
 
 RESET = 0x07  # Reset data register value
 
-# Start measurement at 4lx resolution. Time typically 16ms.
-
+# Start measurement at 4lx resolution. Time typically 16ms.ㅇ
 CONTINUOUS_LOW_RES_MODE = 0x13
 
 # Start measurement at 1lx resolution. Time typically 120ms
